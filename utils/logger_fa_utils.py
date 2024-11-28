@@ -1,3 +1,6 @@
+# factory pattern
+# Factory Method Pattern vs Abstract Factory Pattern
+
 from functools import wraps
 
 from loguru import logger
@@ -15,7 +18,7 @@ from settings import LOG_FILE_PATH
 today = datetime.now(timezone("Asia/Seoul"))
 
 
-class Pusher:
+class LoggerFa:
     _logger = False
 
     @classmethod
