@@ -1,18 +1,30 @@
-from utils import Pusher, send_log_file
+from utils import LoggerFa, LoggerSi
+from utils import send_log_file
 
 PROJECT_NAME = "test"
 
 
-@Pusher.time_execution()
-@Pusher.monitor_resources_de()
-def test(message: str):
+@LoggerFa.time_execution()
+@LoggerFa.monitor_resources_de()
+def factory_test(message: str):
 
-    pusher = Pusher.get_logger()
+    pusher = LoggerFa.get_logger()
 
     pusher.error(message)
 
-    send_log_file(PROJECT_NAME)
+    # send_log_file(PROJECT_NAME)
+
+
+@LoggerSi.time_execution()
+@LoggerSi.monitor_resources_de()
+def singleton_test(message: str):
+
+    # LoggerSi.reset()
+
+    LoggerSi.debug("This is an error message.", extra={"user": "John Doe"})
+
+    # send_log_file(PROJECT_NAME)
 
 
 if __name__ == "__main__":
-    test("hello world!")
+    singleton_test("hello world!")
