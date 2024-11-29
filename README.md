@@ -1,7 +1,24 @@
 # setting-loguru
 
-## Overview
+## 🧑‍💻 Overview
 글을 못 써서 이런거 적는 게 정말 힘드네요...
+
+## 🔍 Description
+```
+├─ README.md
+├─ .gitignore
+├─ log
+│  ├─ __init__.py
+│  └─ out.log
+├─ main.py          # 테스트용 파일
+├─ requirements.txt # 필요 라이브러리 기재
+├─ settings.py
+└─ utils
+   ├─ __init__.py
+   ├─ es_handler.py
+   ├─ logger_fa_utils.py # Factory Pattern 적용
+   └─ logger_si_utils.py # Singleton Pattern 적용
+```
 
 ## 🛠️ What Has Changed
 **[Version 0.0.1]**: Factory Pattern으로 이루어진 logger utils
@@ -18,7 +35,7 @@
 4. "lazy initialization" 방식으로, 필요할 때만 초기화, 반복적인 초기화 X -> 불필요한 객체 생성을 방지하여 메모리와 초기화 비용 줄임.
 5. 다중 스레드 환경?에서의 단점은 아직 공부중... KFP에서 발생할 수 있는 환경인지는 모르겠음.
 
-## example
+## ⏩ Example
 
 * quick-start
 ```sh
